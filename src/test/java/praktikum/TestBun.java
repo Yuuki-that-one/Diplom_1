@@ -1,6 +1,8 @@
+package praktikum;
+
 import org.junit.Assert;
 import org.junit.Test;
-import praktikum.Bun;
+
 public class TestBun {
     @Test
     public void checkGetName() {
