@@ -57,7 +57,7 @@ public class TestBurger {
         Assert.assertEquals("Ингридиент не перемещен", ingredientMock2, burger.ingredients.get(1));
     }
     @Test
-    public void checkGetPrice() {
+    public void checkGetPriceWithMock() {
         burger.setBuns(bunMock);
         burger.addIngredient(ingredientMock);
         burger.addIngredient(ingredientMock2);
