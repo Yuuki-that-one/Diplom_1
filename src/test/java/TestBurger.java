@@ -34,28 +34,28 @@ public class TestBurger {
     @Test
     public void checkSetBuns() {
         burger.setBuns(bunMock);
-        Assert.assertEquals("Булочка не задана", bunMock, burger.bun);
+        Assert.assertEquals("Р‘СѓР»РѕС‡РєР° РЅРµ Р·Р°РґР°РЅР°", bunMock, burger.bun);
     }
     @Test
     public void checkTheIngredientCanBeAdded() {
 
         burger.addIngredient(ingredientMock);
-        Assert.assertTrue("Ингридиент не добавлен", burger.ingredients.contains(ingredientMock));
+        Assert.assertTrue("РРЅРіСЂРёРґРёРµРЅС‚ РЅРµ РґРѕР±Р°РІР»РµРЅ", burger.ingredients.contains(ingredientMock));
 
     }
     @Test
     public void checkTheIngredientCanBeRemoved() {
         burger.addIngredient(ingredientMock);
         burger.removeIngredient(0);
-        Assert.assertFalse("Ингридиент не удален", burger.ingredients.contains(ingredientMock));
+        Assert.assertFalse("РРЅРіСЂРёРґРёРµРЅС‚ РЅРµ СѓРґР°Р»РµРЅ", burger.ingredients.contains(ingredientMock));
 
-}
+    }
     @Test
     public void checkTheIngredientCanBeMoved() {
         burger.addIngredient(ingredientMock2);
         burger.addIngredient(ingredientMock);
         burger.moveIngredient(0, 1);
-        Assert.assertEquals("Ингридиент не перемещен", ingredientMock2, burger.ingredients.get(1));
+        Assert.assertEquals("РРЅРіСЂРёРґРёРµРЅС‚ РЅРµ РїРµСЂРµРјРµС‰РµРЅ", ingredientMock2, burger.ingredients.get(1));
     }
     @Test
     public void checkGetPrice() {
@@ -65,7 +65,7 @@ public class TestBurger {
         Mockito.when(bunMock.getPrice()).thenReturn(10f);
         Mockito.when(ingredientMock.getPrice()).thenReturn(200f);
         Mockito.when(ingredientMock2.getPrice()).thenReturn(3000f);
-        Assert.assertEquals("Цена посчитана неверно",3220F, burger.getPrice(), 0);
+        Assert.assertEquals("Р¦РµРЅР° РїРѕСЃС‡РёС‚Р°РЅР° РЅРµРІРµСЂРЅРѕ",3220F, burger.getPrice(), 0);
 
     }
     @Test
@@ -78,6 +78,6 @@ public class TestBurger {
         Mockito.when(ingredientMock.getName()).thenReturn("Cheese");
         Mockito.when(ingredientMock.getPrice()).thenReturn(110f);
         String expectedReceipt = "(==== Test Bun ====)\r\n= filling Cheese =\r\n(==== Test Bun ====)\r\n\r\nPrice: 160,000000\r\n";
-        Assert.assertEquals("Чек не совпадает", expectedReceipt, burger.getReceipt());
+        Assert.assertEquals("Р§РµРє РЅРµ СЃРѕРІРїР°РґР°РµС‚", expectedReceipt, burger.getReceipt());
     }
 }

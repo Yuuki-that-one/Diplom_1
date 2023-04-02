@@ -2,15 +2,15 @@ import org.junit.Assert;
 import org.junit.Test;
 import praktikum.Bun;
 public class TestBun {
-@Test
+    @Test
     public void checkGetName() {
-    Bun bun = new Bun("Зеленая булочка", 25f);
-    Assert.assertEquals("Имя задается неверно","Зеленая булочка", bun.getName());
-}
-@Test
+        Bun bun = new Bun("Р—РµР»РµРЅР°СЏ Р±СѓР»РѕС‡РєР°", 25f);
+        Assert.assertEquals("РРјСЏ Р·Р°РґР°РµС‚СЃСЏ РЅРµРІРµСЂРЅРѕ","Р—РµР»РµРЅР°СЏ Р±СѓР»РѕС‡РєР°", bun.getName());
+    }
+    @Test
     public void checkGetPrice() {
-    Bun bun = new Bun("Красная булочка", 456f);
-    Assert.assertEquals("Цена задается неверно",456f, bun.getPrice(),0);
-}
+        Bun bun = new Bun("РљСЂР°СЃРЅР°СЏ Р±СѓР»РѕС‡РєР°", 456f);
+        Assert.assertEquals("Р¦РµРЅР° Р·Р°РґР°РµС‚СЃСЏ РЅРµРІРµСЂРЅРѕ",456f, bun.getPrice(),0);
+    }
 
 }
