@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class TestBurgerDb {
 
-    private static Database database = new Database();
+    private static final Database database = new Database();
     private final List<Ingredient> ingredients;
     private final Bun bun;
     private final float price;
