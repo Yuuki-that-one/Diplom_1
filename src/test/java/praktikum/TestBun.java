@@ -1,18 +1,25 @@
 package praktikum;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
+import com.github.javafaker.Faker;
+
+import java.util.Locale;
 
 public class TestBun {
     @Test
     public void checkGetName() {
-        Bun bun = new Bun("Зеленая булочка", 25f);
-        Assert.assertEquals("Имя задается неверно","Зеленая булочка", bun.getName());
+        Faker faker = new Faker(new Locale("ru"));
+        String name = faker.funnyName() + faker.pokemon().toString();
+        Bun bun = new Bun(name, 25f);
+        Assert.assertEquals("Имя задается неверно",name, bun.getName());
     }
     @Test
     public void checkGetPrice() {
-        Bun bun = new Bun("Красная булочка", 456f);
-        Assert.assertEquals("Цена задается неверно",456f, bun.getPrice(),0);
+        float price = Float.parseFloat(RandomStringUtils.randomNumeric(3));
+        Bun bun = new Bun("Красная булочка", price);
+        Assert.assertEquals("Цена задается неверно",price, bun.getPrice(),0);
     }
 
 }
